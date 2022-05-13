@@ -1,0 +1,60 @@
+﻿@model IEnumerable<User>
+@{
+    ViewData["Title"] = "index";
+}
+<div class="container p-3">
+   <div class="row pt-4">
+       <div class="col-6">
+           <h2 class="text-primary">Users DashBoard</h2>
+       </div>
+       <div class="col-6 text-end">
+           <a asp-controller="Category" asp-action="Create" class="btn btn-outline-primary">
+               <i class="bi bi-plus-circle"></i>&nbsp;  Create New Transacation 
+           </a>
+
+       </div>
+
+   </div>
+   <br /> 
+
+</div>
+<table class="table table-hover" style="width:100%">
+    <thead class="bg-primary text-light"  >
+        <tr>
+            <th>
+                 Name 
+            </th>
+             <th>
+                 E-mail
+            </th>
+             <th>
+                    Phone Number
+            </th>
+            <th>
+                 Balance
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td width="50%" class="text-primary">
+                    @obj.Name
+                </td>
+                 <td width="0%" class="text-primary">
+                    @obj.Email
+                </td>
+                 <td width="0%" class="text-primary">
+                    @obj.PhoneNumber
+                </td>
+                 <td width="0%" class="text-primary">
+                    @obj.Balance
+                </td>
+                
+            </tr>
+            
+        }
+    </tbody>
+
+</table>
