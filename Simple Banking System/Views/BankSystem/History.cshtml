@@ -1,11 +1,11 @@
-﻿@model IEnumerable<User>
+﻿@model IEnumerable<Transactions>
 @{
     ViewData["Title"] = "index";
 }
 <div class="container p-3">
    <div class="row pt-4">
        <div class="col-6">
-           <h2 class="text-primary">Users DashBoard</h2>
+           <h2 class="text-primary">Transfers History </h2>
        </div>
        <div class="col-6 text-end">
            <a asp-controller="BankSystem" asp-action="Transfer" class="btn btn-outline-primary">
@@ -22,16 +22,19 @@
     <thead class="bg-primary text-light"  >
         <tr>
             <th>
-                 Name 
+                 Sender 
             </th>
              <th>
-                  Balance
+                  Recevier
             </th>
             <th>
-                  E-mail
+                  Transfered Amount 
+            </th>
+            <th>
+                    Operation State 
             </th>
              <th>
-                    Details
+                    Date 
             </th>
  
         </tr>
@@ -41,18 +44,19 @@
         {
             <tr>
                 <td width="50%" class="text-primary">
-                    @obj.Name
+                    @obj.Sender
                 </td>
                  <td width="0%" class="text-primary">
-                    @obj.Balance
+                    @obj.Recevier
                 </td>
                  <td width="0%" class="text-primary">
-                    @obj.Email
+                    @obj.TransferAmount
                 </td>
-                 <td width="0%" class="text-primary">
-                     <div class="w-25 btn-group" role="group">
-                       <a asp-controller="BankSystem" asp-action="Details" asp-route-id=@obj.Id class="btn-outline-secondary btn mx-1 ">  <i class="bi bi-box-arrow-up-right text-primary"></i></a>
-                    </div>
+                <td width="0%" class="text-primary">
+                    @obj.OperationState
+                </td>
+                <td width="0%" class="text-primary">
+                    @obj.Date
                 </td>
               
                 

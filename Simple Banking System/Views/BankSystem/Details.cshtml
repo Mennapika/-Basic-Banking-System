@@ -1,0 +1,45 @@
+﻿@model User
+
+<form method="post" asp-action="Details">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">User Details</h2>
+            <hr/>
+        </div>
+        @*<div asp-validation-summary="All"></div>*@
+        <div class="mb-3">
+            <label asp-for=Id></label>
+             <input asp-for=Id class="form-control"  disabled/>
+        </div>
+        <div class="mb-3">
+            <label asp-for=Name></label>
+             <input asp-for=Name class="form-control"  disabled/>
+           
+        </div>
+        <div class="mb-3">
+            <label asp-for=Email></label>
+            <input asp-for=Email class="form-control"  disabled/>
+         
+        </div>
+          <div class="mb-3">
+            <label asp-for=PhoneNumber></label>
+            <input asp-for=PhoneNumber class="form-control" disabled />
+        </div>
+         <div class="mb-3">
+            <label asp-for=Balance></label>
+            <input asp-for=Balance class="form-control" disabled />
+        </div>
+        <div>
+        <a asp-controller="BankSystem" asp-action="Index" class="btn-outline-secondary btn align-content-center m-2 text-primary " style="width:250px">Go Back To List  </a>
+       <a asp-controller="BankSystem" asp-action="Transfer"  class="btn btn-outline-primary">
+               <i class="bi bi-plus-circle"></i>&nbsp;  Create New Transacation 
+           </a>
+    </div>
+    </div>
+
+</form>
+@section Scripts{
+@{
+    <partial name="_ValidationScriptsPartial" />
+}
+}
